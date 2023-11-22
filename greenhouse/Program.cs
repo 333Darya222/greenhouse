@@ -30,16 +30,16 @@ namespace greenhouse
         DateTime datebirth;
         public string post;
         public double salary;
-      public Transfer[] Transfers=new Transfer[0] { };
+       Transfer[] Transfers;
 
         public void Print()
         {
-            Console.WriteLine($"Сотрудник1: {lastname} {firstname} {patronymic} {address} {datebirth} {post} зарплата:{salary} рублей  сведения о перемещении:");
-            foreach (Transfer transfer in Transfers)
-            {
-                Console.WriteLine($"Пост: {transfer.post} Причина: {transfer.reason} Номер: {transfer.number} Дата заказа:");
+            Console.WriteLine($"Сотрудник1: {lastname} {firstname} {patronymic} {address} {datebirth} {post} зарплата:{salary} рублей  сведения о перемещении: {Transfers}");
+            //foreach (Transfer transfer in Transfers)
+            //{
+            //    Console.WriteLine($"Пост: {transfer.post} Причина: {transfer.reason} Номер: {transfer.number} Дата заказа:");
 
-            }
+            //}
            
 
         }
@@ -64,7 +64,7 @@ namespace greenhouse
             datebirth= new DateTime(2003,05,02);
             post = "флорист";
             salary = 50000;
-            Transfers = new Transfer[0] { };
+            
 
 
         }
