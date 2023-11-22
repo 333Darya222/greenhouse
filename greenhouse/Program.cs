@@ -17,8 +17,10 @@ namespace greenhouse
         {
             Employee e = new Employee();
             e.Print();
-            Transfer n = new Transfer();
-            
+            //Transfer n = new Transfer();
+            //n.Print();
+            Customer p = new Customer();
+            p.Print();
 
             Flowers b = new Flowers();
             b.Print();
@@ -101,6 +103,34 @@ namespace greenhouse
         public string variety;
         public double price;
         public string florist;
+        public string Name
+        {
+            get { return name; }
+            set {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("имя не может быть пустым");
+                name = value;
+            }
+        }
+        public string Variety
+        {
+            get { return variety; }
+            set { variety = value; }
+        }
+        public double Price
+        {
+            get { return price; }
+            set {
+                if (price<0)
+                    throw new ArgumentException("неверно");
+                price = value; 
+                 }
+        }
+        public string Florist
+        {
+            get { return florist; }
+            set { florist = value; }
+        }
 
         public void Print()
         {
@@ -132,6 +162,20 @@ namespace greenhouse
         public int phone;
         public order order;
 
+        public Customer(string lastname)
+        {
+            this.lastname =lastname;
+            this.order = order;
+        }
+        public Customer()
+        {
+            lastname = "mmnmbnm";
+
+        }
+        public void Print()
+        {
+            Console.WriteLine($"клиент:{lastname} {order}");
+        }
     }
     public class order
     {
@@ -143,6 +187,26 @@ namespace greenhouse
         public Employee employee;
         public DateTime dateofcompletion;
         public string numberaccount;
+        public Flowers Flowers
+        {
+            get { return flowers;}
+            set {flowers=value; }
+        }
+        public string Variety
+        {
+            get { return variety; }
+            set { variety = value; }
+        }
+        public int Quantity
+        {
+            get { return quantity; }
+            set { quantity = value; }
+        }
+        public DateTime Dateorder;
+        public string Addressdelivery;
+        public Employee Employee;
+        public DateTime Dateofcompletion;
+        public string Numberaccount;
 
     }
   
