@@ -18,8 +18,7 @@ namespace greenhouse
             Employee e = new Employee();
             e.Print();
             Transfer n = new Transfer();
-            n.Print();
-       
+            
 
             Flowers b = new Flowers();
             b.Print();
@@ -38,7 +37,7 @@ namespace greenhouse
 
         public void Print()
         {
-            Console.WriteLine($"Сотрудник1: {lastname} {firstname} {patronymic} {address} {datebirth} {post} зарплата:{salary} рублей  сведения о перемещении: {Transfers}");
+            Console.WriteLine($"Сотрудник1: {lastname} {firstname} {patronymic} {address} {datebirth} {post} зарплата:{salary} рублей  сведения о перемещении: ");
            
 
         }
@@ -56,11 +55,11 @@ namespace greenhouse
        
         public Employee()
         {
-            lastname = "Циммер";
-            firstname = "Дарья";
-            patronymic = "Александровна";
-            address = "Проспект Карла Маркса 26";
-            datebirth= new DateTime(2003,05,02);
+            lastname = "зззз";
+            firstname = "пппп";
+            patronymic = "тттт";
+            address = "ххххх";
+            datebirth= new DateTime(1970,07,02);
             post = "флорист";
             salary = 50000;
             
@@ -89,10 +88,7 @@ namespace greenhouse
         public void Print()
         {
          
-                Console.WriteLine($"должность: {post} " +
-                    $"Причина перевода: {reason} " +
-                    $"Номер: {number} " +
-                    $"Дата приказа:{dateorder}");
+                Console.WriteLine($"должность: {post}  + Причина перевода: {reason} +Номер: {number}  + Дата приказа:{dateorder}");
 
          
 
