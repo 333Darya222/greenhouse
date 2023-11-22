@@ -52,7 +52,7 @@ namespace greenhouse
             this.datebirth = datebirth;
             this.post = post;
             this.salary = salary;
-            //Transfers = new Transfer[0];
+            Transfers = new Transfer[0];
         }
        
         public Employee()
