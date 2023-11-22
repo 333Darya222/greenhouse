@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Net;
+using System.Xml.Linq;
 
 ////ОРАНЖЕРЕЯ
 ////База данных должна содержать сведения о следующих объектах:
@@ -16,8 +17,11 @@ namespace greenhouse
         {
             Employee e = new Employee();
             e.Print();
+            Transfer n = new Transfer();
+            n.Print();
+       
 
-            Flowers b= new Flowers();
+            Flowers b = new Flowers();
             b.Print();
         }
     }
@@ -35,11 +39,6 @@ namespace greenhouse
         public void Print()
         {
             Console.WriteLine($"Сотрудник1: {lastname} {firstname} {patronymic} {address} {datebirth} {post} зарплата:{salary} рублей  сведения о перемещении: {Transfers}");
-            //foreach (Transfer transfer in Transfers)
-            //{
-            //    Console.WriteLine($"Пост: {transfer.post} Причина: {transfer.reason} Номер: {transfer.number} Дата заказа:");
-
-            //}
            
 
         }
@@ -84,6 +83,16 @@ namespace greenhouse
             reason = "потому что";
             number = 254;
             dateorder = new DateTime(1980, 05, 05);
+
+        }
+
+        public void Print()
+        {
+         
+                Console.WriteLine($"Пост: {post} Причина: {reason} Номер: {number} Дата заказа:{dateorder}");
+
+         
+
 
         }
     }
