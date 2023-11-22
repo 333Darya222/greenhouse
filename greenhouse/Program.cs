@@ -80,7 +80,7 @@ namespace greenhouse
         {
             
             post = "доставщик";
-            reason = "потому что";
+            reason = "повышение";
             number = 254;
             dateorder = new DateTime(1980, 05, 05);
 
@@ -89,7 +89,10 @@ namespace greenhouse
         public void Print()
         {
          
-                Console.WriteLine($"Пост: {post} Причина: {reason} Номер: {number} Дата заказа:{dateorder}");
+                Console.WriteLine($"должность: {post} " +
+                    $"Причина перевода: {reason} " +
+                    $"Номер: {number} " +
+                    $"Дата приказа:{dateorder}");
 
          
 
