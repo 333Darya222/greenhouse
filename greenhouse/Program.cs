@@ -55,10 +55,10 @@ namespace greenhouse
        
         public Employee()
         {
-            lastname = "зззз";
-            firstname = "пппп";
-            patronymic = "тттт";
-            address = "ххххх";
+            lastname = "Иванов";
+            firstname = "Иван";
+            patronymic = "Иванович";
+            address = "Ленина 5";
             datebirth= new DateTime(1970,07,02);
             post = "флорист";
             salary = 50000;
