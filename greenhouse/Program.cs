@@ -315,15 +315,15 @@ public string FullName
         }
 
         ////Метод для вычисления стоимости заказа
-        //public decimal CalculateTotalCost()
-        //{
-        //    decimal totalCost = 0;
-        //    foreach (var flower in flowers)
-        //    {
-        //        totalCost += flower.price;
-        //    }
-        //    return totalCost;
-        //}
+        public double CalculateTotalCost()
+        {
+            double totalCost = 0;
+            foreach (var flower in flowers)
+            {
+                totalCost += flower.price;
+            }
+            return totalCost;
+        }
 
         // Метод для изменения деталей заказа
         public void ChangeOrderDetails(string newAddress, DateTime newDateOfCompletion)
