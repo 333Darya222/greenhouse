@@ -30,22 +30,67 @@ namespace greenhouse
             // Попробуем установить отрицательную зарплату
             try
             {
-                e.Salary = -50000; // Это вызовет исключение
+               /* e.Salary = -50000;*/ // Это вызовет исключение
+                e.Salary = 50000;
             }
             catch (ArgumentException ex)
             {
                 Console.WriteLine($"Ошибка: {ex.Message}");
             }
 
-            Transfer n = new Transfer();
-            n.Print();
-            Customer p = new Customer();
-            p.Print();
 
-            Flowers b = new Flowers();
-            b.Print();
-            Order order = new Order();
+            //  Order
+
+            Order order = new Order(DateTime.Now)
+            {
+                Addressdelivery = "Москва, ул. Ленина, д. 2",
+                Dateofcompletion = DateTime.Now.AddDays(3)
+            };
+
+            // Доб. цветы в заказ
+
+            Flowers rose = new Flowers("Роза", "Красная", 50, "Флорист: Иван");
+            Flowers tulip = new Flowers("Тюльпан", "Желтый", 30, "Флорист: Анна"); 
+
+            order.AddFlower(rose);
+            order.AddFlower(tulip); 
+
+            // Вывод информаци о заказе
+
             order.Print();
+
+            // Пример получения количества дней обработки заказа
+
+            Console.WriteLine($"Время обработки заказа (дни): {order.GetProcessingTime().Days}"); 
+
+            // Пример изменения деталей заказа
+
+            order.ChangeOrderDetails("Новый адрес, ул. Цветочная, д. 5", DateTime.Now.AddDays(5));
+            Console.WriteLine("После изменения деталей заказа:");
+            order.Print();
+
+            // Пример получения стоимости заказа
+
+            Console.WriteLine($"Общая стоимость заказа: {order.CalculateTotalCost()} рублей");
+
+            // Пример получения названий всех цветов в заказе
+
+            string[] flowerNames = order.GetFlowersNames();
+            Console.WriteLine("Названия цветов в заказе:");
+            foreach (string name in flowerNames) 
+            {
+                Console.WriteLine(name); 
+            }
+
+            //Transfer n = new Transfer();
+            //n.Print();
+            //Customer p = new Customer();
+            //p.Print();
+
+            //Flowers b = new Flowers();
+            //b.Print();
+            //Order order = new Order();
+            //order.Print();
 
 
             Console.ReadKey();
@@ -346,10 +391,10 @@ public string FullName
         // Метод для печати информации о заказе
         public void Print()
         {
-            Console.WriteLine($"Order Date: {dateorder}");
-            Console.WriteLine($"Completion Date: {dateofcompletion}");
-            Console.WriteLine($"Delivery Address: {addressdelivery}");
-            Console.WriteLine("Flowers in Order:");
+            Console.WriteLine($"Дата заказа: {dateorder}");
+            Console.WriteLine($"дата завершения заказа: {dateofcompletion}");
+            Console.WriteLine($"Адрес доставки: {addressdelivery}");
+            Console.WriteLine("Цветы в заказе:");
             foreach (var flower in flowers)
             {
                 flower.Print();
