@@ -26,12 +26,13 @@ namespace greenhouse
             e.Address = "Москва, ул. Пушкина, д. 1";
             e.Datebirth = new DateTime(1990, 1, 1);
             e.Post = "Менеджер";
+            e.Salary = 50000;
 
             // Попробуем установить отрицательную зарплату
             try
             {
-               /* e.Salary = -50000;*/ // Это вызовет исключение
-                e.Salary = 50000;
+                e.Salary = -50000; // Это вызовет исключение
+                
             }
             catch (ArgumentException ex)
             {
@@ -43,6 +44,7 @@ namespace greenhouse
 
             Order order = new Order(DateTime.Now)
             {
+                Employee = e,
                 Addressdelivery = "Москва, ул. Ленина, д. 2",
                 Dateofcompletion = DateTime.Now.AddDays(3)
             };
@@ -113,7 +115,7 @@ namespace greenhouse
             Console.WriteLine($"Сотрудник: {FullName}, Адрес: {address}, Дата рождения: {datebirth.ToShortDateString()}, " +
                           $"Должность: {post}, Зарплата: {salary} рублей, Возраст: {Age} лет. " +
                           $"Сведения о перемещении: ");
-           
+            
 
         }
         public string Lastname
@@ -290,20 +292,20 @@ public string FullName
     {
         //Flowers[] flowers;
         private List<Flowers> flowers;
-        public string variety; 
+        public string variety;
         public int quantity;/*кол-во*/
         public DateTime dateorder; /*дата и время  заказа*/
         public string addressdelivery; /*адрес доставки*/
         public Employee employee;
         public DateTime dateofcompletion; /*дата и время вып заказа*/
         public string numberaccount;/* номер счета*/
-        
+
 
         public Order()
         {
 
         }
-       
+
         public string Variety
         {
             get { return variety; }
@@ -395,15 +397,33 @@ public string FullName
             Console.WriteLine($"дата завершения заказа: {dateofcompletion}");
             Console.WriteLine($"Адрес доставки: {addressdelivery}");
             Console.WriteLine("Цветы в заказе:");
+            // Вывод информации о сотруднике
+            if (Employee != null)
+            {
+                Console.WriteLine("Ответственный сотрудник:");
+                Employee.Print();
+            }
+            else
+            {
+                Console.WriteLine("Сотрудник не назначен.");
+            }
+
+            Console.WriteLine("Цветы в заказе:");
             foreach (var flower in flowers)
             {
                 flower.Print();
             }
         }
+    
+            //foreach (var flower in flowers)
+            //{
+            //    flower.Print();
+            //}
+        }
     }
 
 
-}
+
     public class Customer
     {
         public string lastname;
