@@ -415,10 +415,6 @@ public string FullName
             }
         }
     
-            //foreach (var flower in flowers)
-            //{
-            //    flower.Print();
-            //}
         }
     }
 
