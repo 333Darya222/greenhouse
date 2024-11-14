@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C8BB024C-9DEC-4AAC-BDCE-1306C97FF97C}</ProjectGuid>
+    <ProjectGuid>{27891EEA-53B2-4BC4-8A3E-F14D5B6D8533}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MathTaskClassLibraryTests</RootNamespace>
-    <AssemblyName>MathTaskClassLibraryTests</AssemblyName>
+    <RootNamespace>TestGreenhouse</RootNamespace>
+    <AssemblyName>TestGreenhouse</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,12 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\greenhouse\greenhouse.csproj">
-      <Project>{3d6c69ca-7405-4d4b-ae4c-d5d6dd2ccd92}</Project>
-      <Name>greenhouse</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
